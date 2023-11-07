@@ -2,19 +2,157 @@
 @tailwind components;
 @tailwind utilities;
 
+@media (max-width: 640px) {
+    .side-login-nav {
+        filter: blur(5px);
+        z-index: -100;
+        width: 100vw;
+    }
 
+    .login-main {
+        position: absolute;
+        width: 100vw;
+    }
 
+    .login-text {
+        font-size: 35px;
+    }
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+    .register-btn {
+        font-size: 22px;
+        margin-top: -0.35rem;
+    }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    .mainl {
+        background-color: transparent;
+        padding: 40px 30px;
+    }
+
+    .login-email {
+        width: 300px;
+    }
+
+    .login-email-text {
+        font-size: 25px;
+        font-weight: 500;
+    }
+
+    .login-password {
+        width: 300px;
+    }
+
+    .login-password-text {
+        font-weight: 500;
+        font-size: 25px;
+    }
+
+    .side-register-nav {
+        filter: blur(5px);
+        z-index: -100;
+        width: 100vw;
+    }
+
+    .register-main {
+        position: absolute;
+        width: 100vw;
+    }
+
+    .register-text {
+        font-size: 35px;
+    }
+
+    .login-btn {
+        font-size: 22px;
+        margin-top: -0.35rem;
+        margin-right: -4rem;
+    }
+
+    .mainr {
+        background-color: #16DA70;
+        padding-top: 40px;
+        height: 100%;
+        padding-left: 30px;
+    }
+
+    .register-firstname {
+        width: 300px;
+    }
+
+    .register-firstname-text {
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    .register-lastname {
+        width: 300px;
+    }
+
+    .register-lastname-text {
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    .register-department {
+        width: 300px;
+    }
+
+    .depmatrcno {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .register-department-text {
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    .register-matricnumber {
+        width: 300px;
+    }
+
+    .register-matricnumber-text {
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    .register-email {
+        width: 300px;
+    }
+
+    .register-email-text {
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    .dobphono {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .register-dob {
+        width: 300px;
+    }
+
+    .register-dob-text {
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    .register-phonenumber {
+        width: -300px;
+    }
+
+    .register-phonenumber-text {
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    .register-password {
+        width: 300px;
+    }
+
+    .register-password-text {
+        font-weight: 500;
+        font-size: 20px;
+    }
 }
