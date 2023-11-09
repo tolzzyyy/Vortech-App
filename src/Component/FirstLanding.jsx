@@ -1,6 +1,6 @@
 import React from 'react';
-import background from '../Assets/background.png';
-import logo from '../Assets/logo1.png'
+import background from '../assets/background.png';
+import logo from '../assets/logo1.png'
 
 const FirstLanding = () => {
   return (

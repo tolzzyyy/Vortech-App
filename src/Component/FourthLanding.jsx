@@ -1,6 +1,6 @@
-import React, {  useState } from 'react';
-import background3 from '../Assets/background.png';
-import voting from '../Assets/voting.png';
+import React from 'react';
+import background3 from '../assets/background.png';
+import voting from '../assets/voting.png';
  
 
 
@@ -16,7 +16,7 @@ const FourthLanding = () => {
           
     
      <div>
-      <img className=' pb-15 px-2 md:px-8 pt-12 md:pt-12 'src={voting} alt="progressive" />
+      <img className=' pb-15 px-2 md:px-8 pt-12 md:pt-12 ' src={voting} alt="progressive" />
       </div>
       <div className=''>
         <h1 className='flex items-center justify-center text-[#16da70] font-extrabold text-2xl pt-10 md:text-4xl'>

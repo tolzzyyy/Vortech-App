@@ -1,6 +1,6 @@
 export {default as img1} from "../assets/Group 37.png";
 export {default as logo} from "../assets/LOGO.png";
-export {default as logo1} from"../assets/LOGO1.png";
+export {default as logo1} from"../assets/logo1.png";
 export {default as login} from "../assets/Login.png";
 export {default as ham} from '../assets/majesticons_menu-line.png'
 export {default as icon} from '../assets/Result Management.png'
