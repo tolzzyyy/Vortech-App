@@ -1,8 +1,8 @@
-import React, {  useState } from 'react';
-import background2 from '../Assets/background.png';
-import progressive from '../Assets/progressive.png';
+import React from 'react';
+import background2 from '../assets/background.png';
+import progressive from '../assets/progressive.png';
  import {BsArrowRight} from 'react-icons/bs';
- import ThreeDotsSpinner from '../Component/ThreeDotsSpinner';
+//  import ThreeDotsSpinner from '../Component/ThreeDotsSpinner';
 
 
 
@@ -28,7 +28,7 @@ const ThirdLanding = () => {
               
       </div>
       <div>
-            <ThreeDotsSpinner/>
+            {/* <ThreeDotsSpinner/> */}
            </div>
      </div>
     
