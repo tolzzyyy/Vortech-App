@@ -35,6 +35,8 @@ const Dashboard = () => {
     const [change, setChange] = useState(false);
     const [open, setOpen] = useState(true);
     const [nav, setNav] = useState(false);
+    const [selectedComponent, setSelectedComponent] = useState("");
+   
 
     useEffect(() => {
         const checkVisibility = JSON.parse(localStorage.getItem('Visibility'));
@@ -49,6 +51,10 @@ const Dashboard = () => {
             );
         }
     }, []);
+
+    const selectedMenu = (menu)=>{    
+        setSelectedComponent(menu.title);
+    }
 
     const handleChangeBg = () => {
         setChange(!change);
@@ -66,13 +72,13 @@ const Dashboard = () => {
                 {nav ? <RxHamburgerMenu size={27} className='md:hidden text-green-600 mt-3 mx-3' /> : <MdOutlineClose className={`md:hidden text-white mt-3 mx-3`} size={30} />}
             </div>
             {!nav && (
-                <ul className="flex flex-col justify-center md:hidden items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-green-700 to-green-600 text-white">
+                <div className="flex flex-col justify-center md:hidden items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-green-700 to-green-600 text-white">
                     {menus.map((menu, index) => (
-                        <li key={index} className="px-4 cursor-pointer capitalize py-4 text-xl">
-                            <Link to={menu.path}>{menu.title}</Link>
-                        </li>
+                        <button key={index} onClick={()=>selectedMenu(menu)}  className="px-4 capitalize py-4 text-xl">
+                            {menu.title}
+                        </button>
                     ))}
-                </ul>
+                </div>
             )}
             <div className={` ${open ? "w-[260px]" : "w-24"} duration-700 hidden md:flex flex-col h-screen bg-green-600 text-white p-5 pt-[-20px]  relative`}>
                 <FaArrowRight size={19} className={` ${open ? "rotate-180" : ""} absolute text-green-600 top-8 px-2 bg-black rounded-full h-7 cursor-pointer -right-3 w-7 ${change ? "bg-white text-green-700 " : ""}`} onClick={() => setOpen(!open)} />
@@ -80,30 +86,28 @@ const Dashboard = () => {
                     <div className={`w-[45px] text-[26px] px-5 rounded-xl font-extrabold flex items-center justify-center text-green-600 bg-white cursor-pointer duration-700`}>V</div>
                     <h1 className={` ${!open ? "scale-0  " : ""} text-[32px] font-bold duration-700 origin-left  text-white`}>VORTECH</h1>
                 </div>
-                <ul className='pt-6'>
+                <div className='pt-6 flex flex-col'>
                     {menus.map((menu, index) => (
-                        <li key={index} className={` ${menu.gap ? 'mt-12' : 'mt-2'} text-white flex hover:bg-green-500 rounded-lg cursor-pointer items-center gap-x-4 p-2`}>
-                            <Link to={menu.path}>
+                        <button key={index} onClick={()=>selectedMenu(menu)} className={` ${menu.gap ? 'mt-12' : 'mt-2'} text-white  hover:bg-green-500 rounded-lg cursor-pointer items-center gap-x-4 p-2`}>
+                            <Link className='flex items-center gap-3'>
                                 <p className='text-white'>{menu.icon}</p>
-                                <span className={` ${!open ? "scale-0 opacity-0  " : "opacity-1"}   duration-700 origin-left  text-white`}>{menu.title}</span>
+                                <span className={` ${!open ? "scale-0 hidden" : "opacity-1"}   duration-700 origin-left  text-white`}>{menu.title}</span>
                             </Link>
-                        </li>
+                        </button>
                     ))}
-                </ul>
+                </div>
             </div>
-            <div className='w-7/12'>
-                <BrowserRouter>
-                <Routes>
-                <Route path="/candidates" component={Candidates} />
-                <Route path="/voters" component={<Voters/>} />
-                <Route path="/analysis" component={Analysis} />
-                <Route path="/configuration" component={Configuration} />
-                <Route path="/results" component={Results} />
-                <Route path="/settings" component={Settings} />
-                <Route path="/logout" component={LogOut} />
-                <Route path="/" component={Home} />
-                </Routes>
-                </BrowserRouter>
+
+            <div className='w-full max-w-7/12'>
+                {/* display components here */}
+                {selectedComponent === "Dashboard" && <Home />}
+                {selectedComponent === "Candidates" && <Candidates />}
+                {selectedComponent === "Voters" && <Voters />}
+                {selectedComponent === "Analysis" && <Analysis />}
+                {selectedComponent === "Configuration" && <Configuration />}
+                {selectedComponent === "Results" && <Results />}
+                {selectedComponent === "Settings" && <Settings />}
+                {selectedComponent === "LogOut" && <LogOut />}
             </div>
         </div>
     );
