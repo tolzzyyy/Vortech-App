@@ -7,6 +7,7 @@ import ThirdLanding from "./ThirdLanding";
 import { IoSunnySharp } from "react-icons/io5";
 import { FaMoon } from "react-icons/fa6";
 import Dashboard from "./Dashboard";
+import Candidates from "./Candidates";
 
 const App = () => {
     const [change, setChange] = useState(false);
@@ -25,7 +26,7 @@ const App = () => {
                 })
               );
         }
-    })
+    },[change])
 
   const handleChangeBg = () => {
     if (change === false) {
@@ -68,6 +69,7 @@ const App = () => {
         <Route path="/secondlanding" exact element={<SecondLanding />} />
         <Route path="/thirdlanding" exact element={<ThirdLanding />} />
         <Route path="/dashboard" exact element={<Dashboard/>} />
+      
 
       </Routes>
     </div>
